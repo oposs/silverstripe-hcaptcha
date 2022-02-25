@@ -1,6 +1,6 @@
 <?php
 
-namespace Oetiker\hCaptcha\Forms;
+namespace Oposs\hCaptcha\Forms;
 
 use SilverStripe\Control\Controller;
 use SilverStripe\Forms\FormField;
@@ -37,6 +37,13 @@ class hCaptchaField extends FormField
      * @var bool Submit remote ip in validation requests
      */
     private static $submit_remote_ip = false;
+
+    public function __construct($name, $title = null, $value = null)
+    {
+        // Set default title
+        if ($title === null) $title = _t('Oetiker\hCaptcha\Forms\hCaptchaField.DEFAULT_TITLE', 'Spam protection');
+        parent::__construct($name, $title, $value);
+    }
 
     /**
      * Validates the h-captcha-response

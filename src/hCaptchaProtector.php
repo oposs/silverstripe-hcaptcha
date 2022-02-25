@@ -1,9 +1,9 @@
 <?php
 
-namespace Oetiker\hCaptcha;
+namespace Oposs\hCaptcha;
 
 
-use Oetiker\hCaptcha\Forms\hCaptchaField;
+use Oposs\hCaptcha\Forms\hCaptchaField;
 
 class hCaptchaProtector implements \SilverStripe\SpamProtection\SpamProtector
 {
@@ -11,9 +11,10 @@ class hCaptchaProtector implements \SilverStripe\SpamProtection\SpamProtector
     /**
      * @inheritDoc
      */
-    public function getFormField($name = 'hCaptcha', $title = 'hCaptcha', $value = null)
+    public function getFormField($name = 'hCaptcha', $title = 'Captcha', $value = null)
     {
-        return new hCaptchaField($name, $title, $value);
+        return new hCaptchaField($name, $title);
+
     }
 
     /**
@@ -21,6 +22,6 @@ class hCaptchaProtector implements \SilverStripe\SpamProtection\SpamProtector
      */
     public function setFieldMapping($fieldMapping)
     {
-        // TODO: Implement setFieldMapping() method.
+        //Not used
     }
 }

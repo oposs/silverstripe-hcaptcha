@@ -1,13 +1,27 @@
 # hCaptcha spam protection
 
-Protect your forms with hCaptcha
+Protect your forms with [hCaptcha](https://www.hcaptcha.com/), a GDPR, CCPA, LGPD, PIPL and more compliant spam prodection
+(according their website) 
 
 ## Installation
 
-As soon this module is published:
+Make sure you met the following requirements beforehand:
+
+- SilverStripe 4.x
+- SilverStripe Spam Protection 3.x
+- PHP CURL and JSON
 
 ```
-    composer require oetiker/silverstripe-hcaptcha dev
+composer require oetiker/silverstripe-hcaptcha dev
+```
+
+And set hCaptcha as your default spamprotector:
+
+```yaml
+
+SilverStripe\SpamProtection\Extension\FormSpamProtectionExtension:
+  default_spam_protector: Oposs\hCaptcha\hCaptchaProtector
+
 ```
 
 ## Configuration
@@ -16,11 +30,13 @@ In  your `app/_config/hcaptcha.yml`
 
 ```yaml
 
-Oetiker\hCaptcha\Forms\hCaptchaField:
+Oposs\hCaptcha\Forms\hCaptchaField:
   site_key: 'your_site_key'
   secret_key: 'your_secret_key'
 
 ```
+
+For more configuration options check comments in [hCaptchaField.php](src/Froms/hCaptchaField.php)
 
 ## Usage
 
@@ -34,7 +50,7 @@ new hCaptchaField('SpamProtection', 'SpamProtection', null);
 
 ```
 
-Or if you use Userforms:
+Or if you use [Userforms](https://github.com/silverstripe/silverstripe-userforms):
 
 ![img.png](img/img.png)
 

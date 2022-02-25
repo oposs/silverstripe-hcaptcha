@@ -1,5 +1,5 @@
 {
-  "name": "oetiker/silverstripe-hcaptcha",
+  "name": "oposs/silverstripe-hcaptcha",
   "type": "silverstripe-vendormodule",
   "description": "Protect your forms with hCaptcha",
   "homepage": "https://oetiker.ch",
@@ -10,21 +10,24 @@
     "captcha",
     "hcaptcha"
   ],
+  "support": {
+    "issues": "https://github.com/oposs/silverstripe-hcaptcha/issues"
+  },
   "authors": [
     {"name": "Tobias Bossert", "email": "bossert@oetiker.ch"}
   ],
   "require": {
+    "silverstripe/cms": "^4",
     "silverstripe/framework": "^4",
-    "silverstripe/vendor-plugin": "*",
+    "silverstripe/spamprotection": "~3.0",
     "php": "^7.4 || ^8.0",
     "ext-curl": "*",
     "ext-json": "*"
   },
   "autoload": {
     "psr-4": {
-      "Oetiker\\hCaptcha\\": "src/",
-      "Oetiker\\hCaptcha\\Forms\\" : "src/Froms"
+      "Oposs\\hCaptcha\\": "src/",
+      "Oposs\\hCaptcha\\Forms\\" : "src/Froms"
     }
-  },
-  "version": "0.0.1"
+  }
 }
