@@ -1,0 +1,30 @@
+{
+  "name": "oetiker/silverstripe-hcaptcha",
+  "type": "silverstripe-vendormodule",
+  "description": "Protect your forms with hCaptcha",
+  "homepage": "https://oetiker.ch",
+  "license": "MIT",
+  "keywords": [
+    "silverstripe",
+    "Spamprotection",
+    "captcha",
+    "hcaptcha"
+  ],
+  "authors": [
+    {"name": "Tobias Bossert", "email": "bossert@oetiker.ch"}
+  ],
+  "require": {
+    "silverstripe/framework": "^4",
+    "silverstripe/vendor-plugin": "*",
+    "php": "^7.4 || ^8.0",
+    "ext-curl": "*",
+    "ext-json": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Oetiker\\hCaptcha\\": "src/",
+      "Oetiker\\hCaptcha\\Forms\\" : "src/Froms"
+    }
+  },
+  "version": "0.0.1"
+}

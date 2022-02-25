@@ -1,0 +1,5 @@
+en:
+  Oetiker\hCaptcha\Forms\hCaptchaField:
+    EMPTY: "Bitte captcha beantworten. Wenn nicht sichtbar, Javascript von js.hcaptcha.com erlauben"
+    NOSCRIPT: "Javascript muss aktiv sein um dieses Formular absenden zu kommen"
+    VALIDATE_ERROR: "Captcha konnte nicht verfiziert werden"
