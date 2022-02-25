@@ -12,7 +12,7 @@ Make sure you met the following requirements beforehand:
 - PHP CURL and JSON
 
 ```
-composer require oetiker/silverstripe-hcaptcha dev
+composer require oposs/silverstripe-hcaptcha dev
 ```
 
 And set hCaptcha as your default spamprotector:
@@ -44,7 +44,7 @@ In php:
 
 ```injectablephp
 
-use Oetiker\hCaptcha\hCaptchaProtector\Forms
+use Oposs\hCaptcha\hCaptchaProtector\Forms
 
 new hCaptchaField('SpamProtection', 'SpamProtection', null);
 

@@ -41,7 +41,7 @@ class hCaptchaField extends FormField
     public function __construct($name, $title = null, $value = null)
     {
         // Set default title
-        if ($title === null) $title = _t('Oetiker\hCaptcha\Forms\hCaptchaField.DEFAULT_TITLE', 'Spam protection');
+        if ($title === null) $title = _t('Oposs\hCaptcha\Forms\hCaptchaField.DEFAULT_TITLE', 'Spam protection');
         parent::__construct($name, $title, $value);
     }
 
@@ -57,7 +57,7 @@ class hCaptchaField extends FormField
 
         // Empty response
         if (!isset($captchaResponse)) {
-            $validator->validationError($this->name, _t('Oetiker\hCaptcha\Forms\hCaptchaField.EMPTY', '_Please answer the captcha, if you do not see the captcha you must enable JavaScript'));
+            $validator->validationError($this->name, _t('Oposs\hCaptcha\Forms\hCaptchaField.EMPTY', '_Please answer the captcha, if you do not see the captcha you must enable JavaScript'));
             return false;
         }
 
@@ -71,10 +71,10 @@ class hCaptchaField extends FormField
         if ($submit_remote_ip) $validatorRequest['remoteip'] = Controller::curr()->getRequest()->getIP();
 
         $curlOptions = [
-            'CURLOPT_URL' => 'https://hcaptcha.com/siteverify',
-            'CURLOPT_POST' => true,
-            'CURLOPT_POSTFIELDS' => http_build_query($validatorRequest),
-            'CURLOPT_RETURNTRANSFER' => true,
+            CURLOPT_URL => 'https://hcaptcha.com/siteverify',
+            CURLOPT_POST => true,
+            CURLOPT_POSTFIELDS => http_build_query($validatorRequest),
+            CURLOPT_RETURNTRANSFER => true,
         ];
         $verify = curl_init();
         curl_setopt_array($verify, $curlOptions);
@@ -84,7 +84,7 @@ class hCaptchaField extends FormField
         if ($responseData->success) {
             return true;
         } else {
-            $validator->validationError($this->name, _t('Oetiker\hCaptcha\Forms\hCaptchaField.VALIDATE_ERROR', '_Captcha could not be validated'));
+            $validator->validationError($this->name, _t('Oposs\hCaptcha\Forms\hCaptchaField.VALIDATE_ERROR', '_Captcha could not be validated'));
             return false;
         }
 

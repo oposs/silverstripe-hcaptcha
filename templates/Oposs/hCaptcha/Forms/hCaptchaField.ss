@@ -1,5 +1,5 @@
 <noscript>
-    <p><%t Oetiker\hCaptcha\Forms\hCaptchaField.NOSCRIPT "You must enable JavaScript to submit this form" %></p>
+    <p><%t Oposs\hCaptcha\Forms\hCaptchaField.NOSCRIPT "You must enable JavaScript to submit this form" %></p>
 </noscript>
 
 <div class="h-captcha"
