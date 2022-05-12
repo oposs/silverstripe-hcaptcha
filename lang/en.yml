@@ -1,6 +1,6 @@
 en:
   Oposs\hCaptcha\Forms\hCaptchaField:
-    EMPTY: "Please answer the captcha, if you do not see the captcha please enable JavaScript"
-    NOSCRIPT: "You must enable JavaScript to submit this form"
+    EMPTY: "Please answer the captcha, if you do not see the captcha allow javascript from js.hcaptcha.com"
+    NOSCRIPT: "You must allow JavaScript from js.hcaptcha.com to complete this request"
     VALIDATE_ERROR: "Captcha could not be validated"
     DEFAULT_TITLE: "Spam protection"

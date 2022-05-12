@@ -32,6 +32,7 @@ In  your `app/_config/hcaptcha.yml`
 
 Oposs\hCaptcha\Forms\hCaptchaField:
   site_key: 'your_site_key'
+  # Make sure to set the key starting with 0x.. in quotes
   secret_key: 'your_secret_key'
 
 ```
@@ -53,6 +54,14 @@ new hCaptchaField('SpamProtection', 'SpamProtection', null);
 Or if you use [Userforms](https://github.com/silverstripe/silverstripe-userforms):
 
 ![img.png](img/img.png)
+
+
+## Troubleshooting
+
+**Q:** Users are redirected to the main page when the captcha is incorrect or not solved
+
+**A:** This is most likely a redirecting problem, if your site is running behind a proxy have a look at
+the Director's `alternate_base_url` property (albeit heavily used, not document yet...)
 
 
 Contributions are welcome :)

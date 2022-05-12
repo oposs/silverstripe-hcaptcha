@@ -56,7 +56,7 @@ class hCaptchaField extends FormField
         $submit_remote_ip = self::config()->get('submit_remote_ip');
 
         // Empty response
-        if (!isset($captchaResponse)) {
+        if (empty($captchaResponse)) {
             $validator->validationError($this->name, _t('Oposs\hCaptcha\Forms\hCaptchaField.EMPTY', '_Please answer the captcha, if you do not see the captcha you must enable JavaScript'));
             return false;
         }
@@ -64,7 +64,7 @@ class hCaptchaField extends FormField
         $validatorRequest = [
             'secret' => self::config()->get('secret_key'),
             'response' => $captchaResponse,
-            'sitekey' => self::config()->get('site_key'),
+            'sitekey' => self::getSiteKey()
         ];
 
         // Submit remote ip if enabled
@@ -92,7 +92,7 @@ class hCaptchaField extends FormField
 
     public function Field($properties = [])
     {
-        $siteKey = self::config()->get('site_key');
+        $siteKey = self::getSiteKey();
         $secretKey = self::config()->get('secret_key');
 
         if (empty($siteKey) || empty($secretKey)) {
