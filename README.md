@@ -12,7 +12,7 @@ Make sure you met the following requirements beforehand:
 - PHP CURL and JSON
 
 ```
-composer require oposs/silverstripe-hcaptcha dev
+composer require oposs/silverstripe-hcaptcha
 ```
 
 And set hCaptcha as your default spamprotector:
@@ -34,6 +34,9 @@ Oposs\hCaptcha\Forms\hCaptchaField:
   site_key: 'your_site_key'
   # Make sure to set the key starting with 0x.. in quotes
   secret_key: 'your_secret_key'
+  # To configure options listed here https://docs.hcaptcha.com/configuration
+  api_configuration:
+    recaptchacompat: 'off'
 
 ```
 
@@ -43,7 +46,7 @@ For more configuration options check comments in [hCaptchaField.php](src/Froms/h
 
 In php:
 
-```injectablephp
+```php
 
 use Oposs\hCaptcha\hCaptchaProtector\Forms
 

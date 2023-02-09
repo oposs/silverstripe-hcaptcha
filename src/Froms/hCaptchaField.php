@@ -38,6 +38,17 @@ class hCaptchaField extends FormField
      */
     private static $submit_remote_ip = false;
 
+    /**
+     * Use this array to configure the options listed here https://docs.hcaptcha.com/configuration
+     * Technically you can add arbitrary key/value pairs here
+     *
+     * @var string[]
+     */
+    private static $api_configuration = [
+        'recaptchacompat' => 'on',
+        'render' => 'onload',
+    ];
+
     public function __construct($name, $title = null, $value = null)
     {
         // Set default title
@@ -94,12 +105,15 @@ class hCaptchaField extends FormField
     {
         $siteKey = self::getSiteKey();
         $secretKey = self::config()->get('secret_key');
+        $api_config = self::config()->get('api_configuration');
+
+        $url_params = http_build_query($api_config);
 
         if (empty($siteKey) || empty($secretKey)) {
             user_error('You must configure hCaptcha $site_key and $secret_key', E_USER_ERROR);
         }
 
-        Requirements::javascript('https://js.hcaptcha.com/1/api.js');
+        Requirements::javascript("https://js.hcaptcha.com/1/api.js?{$url_params}");
 
         return parent::Field($properties);
     }
