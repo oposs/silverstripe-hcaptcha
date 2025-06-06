@@ -17,17 +17,23 @@
     {"name": "Tobias Bossert", "email": "bossert@oetiker.ch"}
   ],
   "require": {
-    "silverstripe/cms": "^4",
-    "silverstripe/framework": "^4",
-    "silverstripe/spamprotection": "~3.0",
-    "php": "^7.4 || ^8.0",
+    "silverstripe/cms": "^5.0",
+    "silverstripe/framework": "^5.0",
+    "silverstripe/spamprotection": "^4.0",
+    "php": "^8.1",
     "ext-curl": "*",
     "ext-json": "*"
   },
   "autoload": {
     "psr-4": {
       "Oposs\\hCaptcha\\": "src/",
-      "Oposs\\hCaptcha\\Forms\\" : "src/Froms"
+      "Oposs\\hCaptcha\\Forms\\" : "src/Forms"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "composer/installers": true,
+      "silverstripe/vendor-plugin": true
     }
   }
 }

@@ -5,11 +5,14 @@ Protect your forms with [hCaptcha](https://www.hcaptcha.com/), a GDPR, CCPA, LGP
 
 ## Installation
 
+**Note:** This version of the module is compatible with Silverstripe CMS 5.x. For Silverstripe 4.x compatibility, please use an earlier version/tag.
+
 Make sure you met the following requirements beforehand:
 
-- SilverStripe 4.x
-- SilverStripe Spam Protection 3.x
-- PHP CURL and JSON
+- SilverStripe 5.x
+- SilverStripe Spam Protection 4.x
+- PHP 8.1+
+- PHP CURL and JSON extensions
 
 ```
 composer require oposs/silverstripe-hcaptcha
@@ -18,7 +21,7 @@ composer require oposs/silverstripe-hcaptcha
 And set hCaptcha as your default spamprotector:
 
 ```yaml
-
+# app/_config/spamprotection.yml
 SilverStripe\SpamProtection\Extension\FormSpamProtectionExtension:
   default_spam_protector: Oposs\hCaptcha\hCaptchaProtector
 
@@ -40,7 +43,7 @@ Oposs\hCaptcha\Forms\hCaptchaField:
 
 ```
 
-For more configuration options check comments in [hCaptchaField.php](src/Froms/hCaptchaField.php)
+For more configuration options check comments in [hCaptchaField.php](src/Forms/hCaptchaField.php)
 
 ## Usage
 
